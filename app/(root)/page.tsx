@@ -7,7 +7,7 @@ const Home = () => {
     firstName: "Yi",
     lastName: "Wei",
     email: "weiyi0124@gmail.com",
-  };
+  } as User;
 
   return (
     <section className="home">
@@ -32,7 +32,7 @@ const Home = () => {
       <RightSideBar
         user={loggedIn}
         transactions={[]}
-        banks={[{ currentBalance: 198.5 }, { currentBalance: 890.5 }]}
+        banks={[]} //{ currentBalance: 198.5 }, { currentBalance: 890.5 }
       />
     </section>
   );
