@@ -22,11 +22,13 @@ import CustomInput from "@/components/CustomInput";
 import { authFormSchema } from "@/lib/utils";
 import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { getLoggedInUser, signIn, signUp } from "@/lib/actions/user.actions";
 
 const AuthForm = ({ type }: { type: string }) => {
-  const router = useRouter;
+  const router = useRouter();
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+
   const formSchema = authFormSchema(type);
 
   // 1. Define your form.
@@ -44,19 +46,20 @@ const AuthForm = ({ type }: { type: string }) => {
     try {
       // sign up with Appwrite and create plaid token
       if (type === "sign-up") {
-        // const newUser = await signUp(data);
-        // setUser(newUser);
+        const newUser = await signUp(data);
+        setUser(newUser);
       }
       if (type === "sign-in") {
-        // const response = await signIn({
-        //   email: data.email,
-        //   password: data.password,
-        // });
-        // if (response) {
-        //   router.push("/");
-        // }
+        const response = await signIn({
+          email: data.email,
+          password: data.password,
+        });
+        console.log(data);
+
+        if (response) {
+          router.push("/");
+        }
       }
-      console.log(data);
       setIsLoading(false);
     } catch (error) {
       console.log(error);
@@ -115,7 +118,7 @@ const AuthForm = ({ type }: { type: string }) => {
                   </div>
                   <CustomInput
                     control={form.control}
-                    name="address"
+                    name="address1"
                     label="Address"
                     placeholder="Enter your specific Address"
                   />
