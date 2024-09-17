@@ -1,36 +1,162 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Modern Digital Bank Website
 
-## Getting Started
+![Digital Bank](https://example.com/banner.png)
 
-First, run the development server:
+## Overview
+
+**Modern Digital Bank Website** is a fully responsive, web-based banking application built using **Next.js**. The project is designed to provide users with a secure and seamless banking experience, enabling them to manage accounts, transfer money, view transactions, and explore investment opportunities. With a focus on performance, security, and modern design, this application is tailored to meet the demands of digital-first banking.
+
+The project leverages **Next.js** for server-side rendering (SSR) and static site generation (SSG), ensuring fast performance and SEO optimization.
+
+## Features
+
+- **Secure Authentication**: Login with two-factor authentication (2FA), secure password encryption, and social logins (OAuth).
+- **Account Management**: View account details, manage multiple accounts, and track balances.
+- **Money Transfers**: Easily transfer money between accounts or to other banks, with real-time notifications.
+- **Transaction History**: View and filter transaction records, and export them for personal use.
+- **Investment Overview**: Monitor your portfolio, including stocks, bonds, and cryptocurrency investments.
+- **AI-Driven Customer Support**: Integrated chatbot and live support for customer inquiries.
+- **Push Notifications**: Get real-time updates on transactions and account changes.
+- **Mobile-First Design**: Fully responsive layout for seamless use on desktop and mobile devices.
+
+## Tech Stack
+
+- **Frontend**: Next.js, React, TypeScript, Tailwind CSS
+- **Backend**: Next.js API Routes, Node.js
+- **Database**: MariaDB database in Appwrite
+- **Authentication**: NextAuth in Appwrite for user authentication and OAuth support
+- **Payment Integration**: Plaid for secure payments and Dwolla for money transfers
+- **Deployment**: Vercel (for frontend and SSR), Docker (for development environment)
+- **CI/CD**: GitHub Actions and Vercel
+
+## Project Structure
+
+```bash
+.
+├── components        # Reusable React components
+├── app
+│   ├── auth          # API routes for backend services
+│   ├── root          # Authentication pages (login, register)
+│   ├── api           # User dashboard for managing accounts
+│   └── page.tsx      # Homepage
+├── public            # Static files (images, icons)
+├── styles            # Global and component-level styles
+├── lib               # Utility functions and custom hooks
+├── .env              # Environment variables
+└── package.json      # Project dependencies
+```
+
+## Installation
+
+To run this project locally, follow these steps:
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/username/digital-bank-website-nextjs.git
+```
+
+### 2. Navigate to the Project Directory
+
+```bash
+cd digital-bank-website-nextjs
+```
+
+### 3. Install Dependencies
+
+```bash
+npm install
+```
+
+### 4. Set Up Environment Variables
+
+Create a `.env` file from `.env.example` at the root of the project with the following variables:
+
+```bash
+# Environment variables for Next.js
+
+#NEXTJS
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+
+#APPWRITE
+NEXT_PUBLIC_APPWRITE_ENDPOINT=https://cloud.appwrite.io/v1
+NEXT_PUBLIC_APPWRITE_PROJECT=
+APPWRITE_DATABASE_ID=
+APPWRITE_USER_COLLECTION_ID=
+APPWRITE_ITEM_COLLECTION_ID=
+APPWRITE_BANK_COLLECTION_ID=
+APPWRITE_TRANSACTION_COLLECTION_ID=
+NEXT_APPWRITE_KEY=
+
+#PLAID
+PLAID_CLIENT_ID=
+PLAID_SECRET=
+PLAID_ENV=
+PLAID_PRODUCTS=
+PLAID_COUNTRY_CODES=
+
+#DWOLLA
+DWOLLA_KEY=
+DWOLLA_SECRET=
+DWOLLA_BASE_URL=
+DWOLLA_ENV=
+```
+
+### 5. Database Setup
+
+banks: accountId(string),bankId(string),accessToken(string),fundingSourceUrl(string),shareableId(string),userId(relationship: banks can contain one userId, userId can belong to many banks)
+
+transactions: name(string),amount(string),channel(string),category(string),senderId(string),receiverId(string),senderBankId(string),receiverBankId(string),email(string),
+
+users: email(email),userId(string),dwollaCustomerUrl(string),dwollaCustomerId(string),firstName(string),lastName(string),address1(string),city(string),postalCode(string),dateOfBirth(string),ssn(string),state(string)
+
+## 6. Run the Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit `http://localhost:3000` in your browser to view the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 7. Setup Shadcn
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+`https://ui.shadcn.com/docs`
 
-## Learn More
+```bash
+npx shadcn@latest add form button input tabs table textarea select progress
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 8. Setup Plaid
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`https://plaid.com/docs/`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+npm install plaid
+npm install react-plaid-link
+vercel
+```
 
-## Deploy on Vercel
+## 9. Setup Dwolla
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`https://developers.dwolla.com/docs`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+npm install dwolla-v2 --save
+vercel
+```
+
+## Testing
+
+Run unit and integration tests with the following command:
+
+```bash
+npm run test
+```
+
+We use **Jest** and **React Testing Library** for testing.
+
+### Code Standards
+
+- Use **TypeScript** throughout the project for type safety.
+- Follow the **Airbnb React/JSX Style Guide**.
+- Make sure all changes are accompanied by corresponding tests.
