@@ -1,10 +1,8 @@
-# Modern Digital Bank Website
-
-![Digital Bank](https://example.com/banner.png)
+# A Modern Digital Bank Platform
 
 ## Overview
 
-**Modern Digital Bank Website** is a fully responsive, web-based banking application built using **Next.js**. The project is designed to provide users with a secure and seamless banking experience, enabling them to manage accounts, transfer money, view transactions, and explore investment opportunities. With a focus on performance, security, and modern design, this application is tailored to meet the demands of digital-first banking.
+**Modern Digital Bank Platform** is a fully responsive, web-based banking application built using **Next.js**. The project is designed to provide users with a secure and seamless banking experience, enabling them to manage accounts, transfer money, view transactions, and explore investment opportunities. With a focus on performance, security, and modern design, this application is tailored to meet the demands of digital-first banking.
 
 The project leverages **Next.js** for server-side rendering (SSR) and static site generation (SSG), ensuring fast performance and SEO optimization.
 
@@ -14,10 +12,7 @@ The project leverages **Next.js** for server-side rendering (SSR) and static sit
 - **Account Management**: View account details, manage multiple accounts, and track balances.
 - **Money Transfers**: Easily transfer money between accounts or to other banks, with real-time notifications.
 - **Transaction History**: View and filter transaction records, and export them for personal use.
-- **Investment Overview**: Monitor your portfolio, including stocks, bonds, and cryptocurrency investments.
-- **AI-Driven Customer Support**: Integrated chatbot and live support for customer inquiries.
-- **Push Notifications**: Get real-time updates on transactions and account changes.
-- **Mobile-First Design**: Fully responsive layout for seamless use on desktop and mobile devices.
+- **Platform-adaptive Design**: Fully responsive layout for seamless use on desktop and mobile devices.
 
 ## Tech Stack
 
@@ -53,13 +48,13 @@ To run this project locally, follow these steps:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/username/digital-bank-website-nextjs.git
+git clone https://github.com/wy2898/yw_bank.git
 ```
 
 ### 2. Navigate to the Project Directory
 
 ```bash
-cd digital-bank-website-nextjs
+cd yw_bank
 ```
 
 ### 3. Install Dependencies
@@ -160,3 +155,9 @@ We use **Jest** and **React Testing Library** for testing.
 - Use **TypeScript** throughout the project for type safety.
 - Follow the **Airbnb React/JSX Style Guide**.
 - Make sure all changes are accompanied by corresponding tests.
+
+## Acknowledgments
+
+I would like to express my deepest gratitude to the following people for his invaluable contributions to this project:
+
+- **[Adrian Hajdin](https://github.com/adrianhajdin)** - For his initial creation of this project.
