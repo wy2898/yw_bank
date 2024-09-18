@@ -12,7 +12,7 @@ const ibmPlexSerif = IBM_Plex_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "T-Bank",
+  title: "YW-Bank",
   description: "A modern banking platform for everyone.",
   icons: {
     icon: "/icons/bank_logo.svg",

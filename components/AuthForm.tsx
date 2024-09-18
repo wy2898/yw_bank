@@ -58,7 +58,6 @@ const AuthForm = ({ type }: { type: string }) => {
           ssn: data.ssn!,
           email: data.email,
           password: data.password,
-          name: "",
         };
         const newUser = await signUp(userData);
         setUser(newUser);
@@ -89,10 +88,10 @@ const AuthForm = ({ type }: { type: string }) => {
             src="icons/bank_logo.svg"
             width={34}
             height={34}
-            alt="T-Bank Logo"
+            alt="YW-Bank Logo"
           />
           <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1">
-            T-Bank
+            YW-Bank
           </h1>
         </Link>
 
@@ -178,13 +177,13 @@ const AuthForm = ({ type }: { type: string }) => {
                 control={form.control}
                 name="email"
                 label="Email"
-                placeholder="Enter your email"
+                placeholder="Enter test01@gmail.com for a glance"
               />
               <CustomInput
                 control={form.control}
                 name="password"
                 label="Password"
-                placeholder="Enter your password"
+                placeholder="Enter 11111111 for a glance"
               />
               <div className="flex flex-col gap-4">
                 <Button type="submit" disabled={isLoading} className="form-btn">

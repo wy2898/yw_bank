@@ -22,7 +22,7 @@ const Sidebar = ({ user }: SiderbarProps) => {
             alt="Bank Logo"
             className="size-[50px] max-xl:size-14"
           />
-          <h1 className="sidebar-logo">T-Bank</h1>
+          <h1 className="sidebar-logo">YW-Bank</h1>
         </Link>
         {sidebarLinks.map((item) => {
           const isActive =
